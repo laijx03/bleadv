@@ -1,13 +1,6 @@
 language: cpp
-
-compiler:
-  - gcc
-
-os:
-  - linux
-
-script:
-  - make
+compiler: gcc
+os: linux
 
 env:
   global:
@@ -40,3 +33,6 @@ addons:
     # Take care in resource usage, and consider the build frequency allowances per
     #   https://scan.coverity.com/faq#frequency
     branch_pattern: master
+
+  script:
+    - make
