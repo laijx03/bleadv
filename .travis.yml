@@ -1,18 +1,38 @@
 language: cpp
 compiler: gcc
 os: linux
+script:
+  - make
+
 env:
   global:
-  - secure: bfp8OK7rasQztDwh6Cfkeg65dkArYiTaf7PQMJUEnOcec/cYgLjbQpG6+dNHlmkQa0gDlrtaZPeZkrjNY7WG6LbtPBY7jobYPq0WHZiP+UhPxip/r+pvVmbfjfXKkj+QaQf8wQUaANeR7v9RKycO3T4285k075ggTdR6lW9ZxzmIc1qd/bEzZkHhV2Prk0J6AJX5T/XIGsnjGWOFndFhFLL8WZ7KHcG6WMDZTkRoSbnOczERBD3Mv0UP9LpdjWEYLxus+DDxr1DgJEqEwT1yy9X85dmC2IyrcurBVhiMqJ3SUS6PrsHKN45U7hjIS16knFxqJMfMp/Gvrd40Il93eEH5ZxvwbPzT4xzU/3RRVizQjz+NfpCahDVjszC16bUrbOg0mURf5Ftuu5NnFyTn8aziXpwhsdC43ZOOKMBfzjuFDrRyhehe52zEpJKVuaNYoctCy4uG0PhLy+OmqaPMmkqYPqRteNsLOjNE+r5RZUQ69MyOpJ3pPpRbgaluzw1oOubbsRTUaviVj62Qsu4XfT4v15EcvH1vDs3POfRwF0iUPTEe0N6ygnGf17++N80J6ojt8LJuvX47tUHKZTv525LtxuqCVWbNaOVlOBVzES6aFe3jRgjwZ0lZaENiVUcioo6V4ZD5DuCFUucDPUTNPVBC/PyAj/Zrqwv0anbGw3U=
+    # COVERITY_SCAN_TOKEN
+    # ** specific to your project **
+    - secure: "ZgF3Pcl28pEbN3kvYk09cvok2fAFrc16HR6dtxbVaZuNTb0nLeInNMWFowA9R65HnRp1W9rcfA8iU8RtAUOyaRJIqpbbg8LgnUaCWrXrFxnPsRDCR1zWjx7dJ8XaTHWY4ipa7j/AlTOL5A+JAXoCBjObcyoo+CDbL7xEM++vByCU0Vc/G2RrWKTHP/dLjawYv4YxsbZUSzdjE92NziHOnRuMI9ttXvTIp8SeGOk9QO/M5ToytkNR7bAq/KG8MrcWqCJZBJABXg1JL4oZWKp0TIdeWdN0oEftOtRy+kdTm4J12vbJs2h6+0oY+XA9x+6zXXe4ycA8PlPptJmioactCUMqHQKQvjuyNO9xe9ze/jppUQPA28VufBQJafkuU2vpugb3QDOZDFI0tufJVl8mvgrzr446LfTgUfpMK5Sod4eKwIeAH5oh6AjvV+TSEdhNGEGzMXnRSeXeNa/xcQGAQDHcqn09EUOogHXgtzEjBRR5cn9cD6kKrtDFDMRcyXLb+H76MGNPCJUPpECJln899C2NpfEJGbbOchP3tClsHVuimqhBJxZlVRieRPe/fsDZwSBRCPTob4Nq65XZqAjtkpYFZcpcE6n+TeQzz3q5tQDCMLHNgEPYTkBIAVHyi5uLnRsttUUA6KCMBA6L0APppfw8zVVIp0eHYzwV1z1Y3s8="
+
 addons:
   coverity_scan:
+
+    # GitHub project metadata
+    # ** specific to your project **
     project:
       name: laijx03/bleadv
       version: 0.1
       description: bleadv
+
+    # Where email notification of build analysis results will be sent
     notification_email: laijx03@gmail.com
-    build_command_prepend: 
+
+    # Commands to prepare for build_command
+    # ** likely specific to your build **
+    build_command_prepend:
+
+    # The command that will be added as an argument to "cov-build" to compile your project for analysis,
+    # ** likely specific to your build **
     build_command: make
+
+    # Pattern to match selecting branches that will run analysis. We recommend leaving this set to 'coverity_scan'.
+    # Take care in resource usage, and consider the build frequency allowances per
+    #   https://scan.coverity.com/faq#frequency
     branch_pattern: master
-script:
-- make
+
